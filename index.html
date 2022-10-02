@@ -12,15 +12,46 @@
 <body>
   <div class="problem-box">
   <h2>The Staircase</h2>
-  <img width="400px" height="388px" src="./images/staircase-screenshot.png">
+  <img width="400px" height="388px" src="./images/staircase-screenshot.png" alt="Staircase Problem">
   <br>
-  <code>
-  function staircase(n) { <br>
-    for (let i = 1; i <= n; i++) { <br>
-      console.log((' '.repeat(n - i)) + '#'.repeat(i))<br>
-  } <br>
+  <pre><code>
+  function staircase(n) { 
+    for (let i = 1; i <= n; i++) { 
+      console.log((' '.repeat(n - i)) + '#'.repeat(i))
+  } 
 }
- </code>
+ </code></pre>
+</div>
+
+<div class="problem-box">
+<h2>Time Conversion</h2>
+<img width="400px" height="387px" src="./images/time-conversion.png" alt="Time Conversion Problem">
+<br>
+<pre><code>
+  function timeConversion(s) {
+    //grab hour
+    let hh = s.slice(0, 2);
+    //string converted to integer
+    let intHH = parseInt(hh);
+    //AM or PM value
+    let ampm = s.slice(8);
+    let militaryTime = '';
+    if ((ampm === 'PM' && hh === '12') || (ampm === 'AM' && hh !== '12')) {
+        //drop AM/PM value
+        militaryTime = s.slice(0, 8);
+    }
+    else if (ampm === 'AM' && hh === '12') {
+        //drop AM/PM value
+        militaryTime = s.replace('12', '00').slice(0, 8);
+    }
+    else if (ampm === 'PM' && hh !== '12') {
+        intHH += 12;
+        let updatedTime = s.replace(hh, intHH);
+        //dropping AM/PM value
+        militaryTime = updatedTime.slice(0, 8)
+    } return militaryTime
+}
+</code></pre>
 </div>
 
 
