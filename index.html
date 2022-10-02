@@ -10,6 +10,10 @@
 </head>
 
 <body>
+<div class="hero">
+  <h1>JavaScript Algorithm Problems</h1>
+</div>
+
   <div class="problem-box">
   <h2>The Staircase</h2>
   <img width="400px" height="388px" src="./images/staircase-screenshot.png" alt="Staircase Problem">
@@ -55,7 +59,32 @@
 </div>
 
 
+<div class="problem-box">
+  <h2>Grading</h2>
+  <img width="400px" height="387px" src="./images/grading.png" alt="Grading Problem">
+  <br>
+  <pre><code>
+    function gradingStudents(grades) {
+      let finalGrades = [];
+      let n = grades.length
+    
+      for (let i = 0; i < n; i++) {
+        let roundUp = Math.ceil(grades[i] / 5) * 5
+    
+        if ((grades[i] < 38) || (grades[i] >= 38 && ((roundUp - grades[i]) >= 3))) {
+          finalGrades.push(grades[i])
+        } else if (grades[i] >= 38 && ((roundUp - grades[i]) < 3)) {
+          finalGrades.push(roundUp);
+        }
+      } return finalGrades
+    }
+  </code></pre>
+  </div>
 
+
+<footer>
+  Created by <a class="custom-link" href="https://github.com/missatrox44">missatrox44</a>
+</footer>
 
 </body>
 
