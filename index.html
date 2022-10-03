@@ -81,6 +81,32 @@
   </code></pre>
   </div>
 
+  <div class="problem-box">
+    <h2>Apples & Oranges</h2>
+    <img width="400px" height="387px" src="./images/apples_oranges.png" alt="Apples and Oranges">
+    <br>
+    <pre><code>
+      function countApplesAndOranges(s, t, a, b, apples, oranges) {
+        let appleCount = 0;
+        let orangeCount = 0;
+    
+        for (let i = 0; i < apples.length; i++) {
+            let fallenApple = apples[i] + a
+            if ((fallenApple >= s) && (fallenApple <= t)) {
+                appleCount++
+            }
+        } console.log(appleCount);
+    
+        for (let j = 0; j < oranges.length; j++) {
+            let fallenOrange = oranges[j] + b
+            if ((fallenOrange >= s) && (fallenOrange <= t)) {
+                orangeCount++
+            }
+    
+        } console.log(orangeCount);
+    }
+    </code></pre>
+    </div>
 
 <footer>
   Created by <a class="custom-link" href="https://github.com/missatrox44">missatrox44</a>
