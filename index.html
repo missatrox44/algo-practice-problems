@@ -131,6 +131,48 @@
     <br>
     <pre><code>
       function getTotalX(a, b) {
+        let rangeArr = [];
+        let maxA = Math.max(...a);
+        let counter = 0
+    
+        for (let i = 1; i <= 100; i ++) {
+            let r = maxA * i;
+            rangeArr.push(r);
+            if (r === b[0]) {
+                { break }
+            } 
+        }
+    
+        for (let k = 0; k < rangeArr.length; k++) {
+            for (let j = 0; j < b.length; j++){
+                let remainder = b[j] % rangeArr[k]
+    
+                if (remainder !== 0) {
+                    rangeArr.splice(k, 1, 0)
+                    { break }
+                } 
+            } 
+            for (let g = 0; g < a.length; g++){
+                let remainder = rangeArr[k] % a[g];
+    
+                if (remainder !== 0) {
+                    rangeArr.splice(k, 1, 0)
+                    { break }
+                } 
+            }
+        } 
+    
+        for (let t= 0; t < rangeArr.length; t++) {
+                if (rangeArr[t] !== 0) {
+                    counter++;
+                }
+            } return counter;
+    }
+    </code></pre>
+    <br>
+    <h2>Alternate Answer</h2>
+    <pre><code>
+      function getTotalX(a, b) {
         let count = 0;
         let minA = Math.min(...a);
         let maxB = Math.max(...b);
