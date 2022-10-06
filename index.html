@@ -147,6 +147,36 @@
       </code></pre>
   </div>
 
+  <div class="problem-box">
+    <h2>Breaking Records</h2>
+    <img width="400px" height="387px" src="./images/breaking-records.png" alt="breaking records">
+    <br>
+    <pre><code>
+      function breakingRecords(scores) {
+        let records = [scores[0], scores[0]];
+        let maxCount = 0;
+        let minCount = 0;
+        let countArr = [0, 0];
+    
+        //loop through scores array
+        for (let i = 0; i < scores.length; i++) {
+            //if score greater than score in record, replace value and add 1 to minCount
+            if (scores[i] > records[0]) {
+                records.splice(0, 1, scores[i]);
+                maxCount++;
+                //if score less than score in record, replace value and add 1 to minCount
+            } else if (scores[i] < records[1]) {
+                records.splice(1, 1, scores[i]);
+                minCount++;
+            }
+            //add maxCount and minCount to new array
+        } countArr.splice(0, 1, maxCount);
+        countArr.splice(1, 1, minCount);
+        return countArr
+    }
+      </code></pre>
+  </div>
+
   <footer>
     Created by <a class="custom-link" href="https://github.com/missatrox44">missatrox44</a>
   </footer>
