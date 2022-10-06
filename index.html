@@ -10,28 +10,28 @@
 </head>
 
 <body>
-<div class="hero">
-  <h1>JavaScript Algorithm Problems</h1>
-</div>
+  <div class="hero">
+    <h1>JavaScript Algorithm Problems</h1>
+  </div>
 
   <div class="problem-box">
-  <h2>The Staircase</h2>
-  <img width="400px" height="388px" src="./images/staircase-screenshot.png" alt="Staircase Problem">
-  <br>
-  <pre><code>
+    <h2>The Staircase</h2>
+    <img width="400px" height="388px" src="./images/staircase-screenshot.png" alt="Staircase Problem">
+    <br>
+    <pre><code>
   function staircase(n) { 
     for (let i = 1; i <= n; i++) { 
       console.log((' '.repeat(n - i)) + '#'.repeat(i))
   } 
 }
  </code></pre>
-</div>
+  </div>
 
-<div class="problem-box">
-<h2>Time Conversion</h2>
-<img width="400px" height="387px" src="./images/time-conversion.png" alt="Time Conversion Problem">
-<br>
-<pre><code>
+  <div class="problem-box">
+    <h2>Time Conversion</h2>
+    <img width="400px" height="387px" src="./images/time-conversion.png" alt="Time Conversion Problem">
+    <br>
+    <pre><code>
   function timeConversion(s) {
     //grab hour
     let hh = s.slice(0, 2);
@@ -56,14 +56,14 @@
     } return militaryTime
 }
 </code></pre>
-</div>
+  </div>
 
 
-<div class="problem-box">
-  <h2>Grading</h2>
-  <img width="400px" height="387px" src="./images/grading.png" alt="Grading Problem">
-  <br>
-  <pre><code>
+  <div class="problem-box">
+    <h2>Grading</h2>
+    <img width="400px" height="387px" src="./images/grading.png" alt="Grading Problem">
+    <br>
+    <pre><code>
     function gradingStudents(grades) {
       let finalGrades = [];
       let n = grades.length
@@ -106,13 +106,13 @@
         } console.log(orangeCount);
     }
     </code></pre>
-    </div>
+  </div>
 
-    <div class="problem-box">
-      <h2>Number Line Jumps</h2>
-      <img width="400px" height="387px" src="./images/kangaroohop.png" alt="Kangaroo Jumps">
-      <br>
-      <pre><code>
+  <div class="problem-box">
+    <h2>Number Line Jumps</h2>
+    <img width="400px" height="387px" src="./images/kangaroohop.png" alt="Kangaroo Jumps">
+    <br>
+    <pre><code>
         function kangaroo(x1, v1, x2, v2) {
           for (let i = 0; i <= 10000; i++) {
               x1 += v1
@@ -123,12 +123,35 @@
           } return 'NO'
       }
       </code></pre>
-      </div>
+  </div>
 
-<footer>
-  Created by <a class="custom-link" href="https://github.com/missatrox44">missatrox44</a>
-</footer>
+  <div class="problem-box">
+    <h2>Between Two Sets</h2>
+    <img width="400px" height="387px" src="./images/between-two-sets.png" alt="between-two-sets">
+    <br>
+    <pre><code>
+      function getTotalX(a, b) {
+        let count = 0;
+        let minA = Math.min(...a);
+        let maxB = Math.max(...b);
+        for (let i = minA; i <= maxB; i += minA) {
+            if (b.every((item) => item % i === 0)) {
+                if (a.every((item) => i % item === 0)) {
+                    count += 1;
+                }
+            }
+        }
+        return count;
+    }
+    
+      </code></pre>
+  </div>
+
+  <footer>
+    Created by <a class="custom-link" href="https://github.com/missatrox44">missatrox44</a>
+  </footer>
 
 </body>
 
 </html>
+
