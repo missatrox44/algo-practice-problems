@@ -218,6 +218,22 @@
     }
       </code></pre>
   </div>
+  
+
+  <div class="problem-box">
+    <h2>Diff Two Array</h2>
+   <p>Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. i.e. return the symmetric difference of the two arrays.</p>
+    <br>
+    <pre><code>
+      function diffArray(arr1, arr2) {
+        return arr1
+          .concat(arr2)
+          .filter(item => !arr1.includes(item) || !arr2.includes(item));
+      }
+    </code></pre>
+  </div>
+
+
 
   <footer>
     Created by <a class="custom-link" href="https://github.com/missatrox44">missatrox44</a>
