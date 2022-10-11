@@ -221,7 +221,31 @@
   
 
   <div class="problem-box">
-    <h2>Diff Two Array</h2>
+    <h2>Subarray Division</h2>
+    <img width="400px" height="387px" src="./images/subarray_division.png" alt="subarray division">
+    <br>
+    <pre><code>
+      function birthday(s, d, m) {
+        function reducer(previousValue, currentValue, index) {
+            const returns = previousValue + currentValue;
+            return returns;
+        }
+    
+        let count = 0;
+    
+        for (let i = 0; i < s.length; i++) {
+            let removed = s.slice(i, (i + m))
+            let sum = removed.reduce(reducer);
+            if (sum === d) {
+                count++
+            }
+        } return count;
+    }
+    </code></pre>
+  </div>
+
+  <div class="problem-box">
+    <h2>Diff Two Arrays</h2>
    <p>Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. i.e. return the symmetric difference of the two arrays.</p>
     <br>
     <pre><code>
@@ -233,7 +257,24 @@
     </code></pre>
   </div>
 
-
+  <div class="problem-box">
+    <h2>Divisible Sum Pairs</h2>
+    <img width="400px" height="387px" src="./images/divisible_sum_pairs.png" alt="divisible sum pairs">
+    <br>
+    <pre><code>
+      function divisibleSumPairs(n, k, ar) {
+        let count = 0;
+        for (let i = 0; i < ar.length; i++) {
+            for (let j = (i + 1); j < ar.length; j++) {
+                let sum = ar[i] + ar[j]
+                if (sum % k === 0) {
+                    count++
+                }
+            }
+        } return count
+    }
+    </code></pre>
+  </div>
 
   <footer>
     Created by <a class="custom-link" href="https://github.com/missatrox44">missatrox44</a>
