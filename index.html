@@ -276,6 +276,40 @@
     </code></pre>
   </div>
 
+  <div class="problem-box">
+    <h2>Migratory Birds</h2>
+    <img width="400px" height="387px" src="./images/migratory-birds.png" alt="divisible sum pairs">
+    <br>
+    <pre><code>
+      function migratoryBirds(arr) {
+        let count1 = 0;
+        let count2 = 0;
+        let count3 = 0;
+        let count4 = 0;
+        let count5 = 0;
+    
+        let repeats = [];
+    
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === 1) {
+                count1++;
+            } else if (arr[i] === 2) {
+                count2++;
+            } else if (arr[i] === 3) {
+                count3++;
+            } else if (arr[i] === 4) {
+                count4++;
+            } else if (arr[i] === 5) {
+                count5++;
+            }
+        }
+        repeats.push(count1, count2, count3, count4, count5)
+        return repeats.indexOf(Math.max(...repeats)) + 1
+    }
+    </code></pre>
+  </div>
+
+
   <footer>
     Created by <a class="custom-link" href="https://github.com/missatrox44">missatrox44</a>
   </footer>
