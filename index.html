@@ -16,6 +16,7 @@
 
   <div class="problem-box">
     <h2>The Staircase</h2>
+    <h4>Easy</h4>
     <img width="400px" height="388px" src="./images/staircase-screenshot.png" alt="Staircase Problem">
     <br>
     <pre><code>
@@ -29,6 +30,7 @@
 
   <div class="problem-box">
     <h2>Time Conversion</h2>
+    <h4>Easy</h4>
     <img width="400px" height="387px" src="./images/time-conversion.png" alt="Time Conversion Problem">
     <br>
     <pre><code>
@@ -61,6 +63,7 @@
 
   <div class="problem-box">
     <h2>Grading</h2>
+    <h4>Easy</h4>
     <img width="400px" height="387px" src="./images/grading.png" alt="Grading Problem">
     <br>
     <pre><code>
@@ -83,6 +86,7 @@
 
   <div class="problem-box">
     <h2>Apples & Oranges</h2>
+    <h4>Easy</h4>
     <img width="400px" height="387px" src="./images/apples_oranges.png" alt="Apples and Oranges">
     <br>
     <pre><code>
@@ -110,6 +114,7 @@
 
   <div class="problem-box">
     <h2>Number Line Jumps</h2>
+    <h4>Easy</h4>
     <img width="400px" height="387px" src="./images/kangaroohop.png" alt="Kangaroo Jumps">
     <br>
     <pre><code>
@@ -127,6 +132,7 @@
 
   <div class="problem-box">
     <h2>Between Two Sets</h2>
+    <h4>Easy</h4>
     <img width="400px" height="387px" src="./images/between-two-sets.png" alt="between-two-sets">
     <br>
     <pre><code>
@@ -191,6 +197,7 @@
 
   <div class="problem-box">
     <h2>Breaking Records</h2>
+    <h4>Easy</h4>
     <img width="400px" height="387px" src="./images/breaking-records.png" alt="breaking records">
     <br>
     <pre><code>
@@ -222,6 +229,7 @@
 
   <div class="problem-box">
     <h2>Subarray Division</h2>
+    <h4>Easy</h4>
     <img width="400px" height="387px" src="./images/subarray_division.png" alt="subarray division">
     <br>
     <pre><code>
@@ -259,6 +267,7 @@
 
   <div class="problem-box">
     <h2>Divisible Sum Pairs</h2>
+    <h4>Easy</h4>
     <img width="400px" height="387px" src="./images/divisible_sum_pairs.png" alt="divisible sum pairs">
     <br>
     <pre><code>
@@ -278,6 +287,7 @@
 
   <div class="problem-box">
     <h2>Migratory Birds</h2>
+    <h4>Easy</h4>
     <img width="400px" height="387px" src="./images/migratory-birds.png" alt="divisible sum pairs">
     <br>
     <pre><code>
@@ -305,6 +315,26 @@
         }
         repeats.push(count1, count2, count3, count4, count5)
         return repeats.indexOf(Math.max(...repeats)) + 1
+    }
+    </code></pre>
+  </div>
+
+  <div class="problem-box">
+    <h2>Day of the Programmer</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/day_of_programmer.png" alt="day of the programmer">
+    <br>
+    <pre><code>
+      function dayOfProgrammer(year) {
+        if ((year > 1918) && ((year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0))) {
+            return ('12.09.' + year)
+        } else if ((year < 1918) && (year % 4 === 0)) {
+            return ('12.09.' + year)
+        } else if (year === 1918) {
+            return ('26.09.' + year)
+        } else {
+            return ('13.09.' + year)
+        }
     }
     </code></pre>
   </div>
