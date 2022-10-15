@@ -358,6 +358,28 @@
     </code></pre>
   </div>
 
+  <div class="problem-box">
+    <h2>Sales By Match</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/sales-by-match.png" alt="sales by match">
+    <br>
+    <pre><code>
+      function sockMerchant(n, ar) {
+        let pairs = 0
+    
+        for (let i = 0; i < ar.length; i++) {
+            for (let j = i + 1; j < ar.length; j++) {
+                if (ar[i] === ar[j]) {
+                    pairs++;
+                    ar.splice(i, 1, "");
+                    ar.splice(j, 1);
+                }
+            }
+        } return pairs
+    }
+    </code></pre>
+  </div>
+
   <footer>
     Created by <a class="custom-link" href="https://github.com/missatrox44">missatrox44</a>
   </footer>
