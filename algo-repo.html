@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+
+  <title>Algo Practice</title>
+</head>
+
+<body>
+  <div class="hero">
+    <h1>JavaScript Algorithm Problems</h1>
+  </div>
+
+  <div class="problem-box">
+    <h2>The Staircase</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="388px" src="./images/staircase-screenshot.png" alt="Staircase Problem">
+    <br>
+    <pre><code>
+  function staircase(n) { 
+    for (let i = 1; i <= n; i++) { 
+      console.log((' '.repeat(n - i)) + '#'.repeat(i))
+  } 
+}
+ </code></pre>
+  </div>
+
+  <div class="problem-box">
+    <h2>Time Conversion</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/time-conversion.png" alt="Time Conversion Problem">
+    <br>
+    <pre><code>
+  function timeConversion(s) {
+    //grab hour
+    let hh = s.slice(0, 2);
+    //string converted to integer
+    let intHH = parseInt(hh);
+    //AM or PM value
+    let ampm = s.slice(8);
+    let militaryTime = '';
+    if ((ampm === 'PM' && hh === '12') || (ampm === 'AM' && hh !== '12')) {
+        //drop AM/PM value
+        militaryTime = s.slice(0, 8);
+    }
+    else if (ampm === 'AM' && hh === '12') {
+        //drop AM/PM value
+        militaryTime = s.replace('12', '00').slice(0, 8);
+    }
+    else if (ampm === 'PM' && hh !== '12') {
+        intHH += 12;
+        let updatedTime = s.replace(hh, intHH);
+        //dropping AM/PM value
+        militaryTime = updatedTime.slice(0, 8)
+    } return militaryTime
+}
+</code></pre>
+  </div>
+
+
+  <div class="problem-box">
+    <h2>Grading</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/grading.png" alt="Grading Problem">
+    <br>
+    <pre><code>
+    function gradingStudents(grades) {
+      let finalGrades = [];
+      let n = grades.length
+    
+      for (let i = 0; i < n; i++) {
+        let roundUp = Math.ceil(grades[i] / 5) * 5
+    
+        if ((grades[i] < 38) || (grades[i] >= 38 && ((roundUp - grades[i]) >= 3))) {
+          finalGrades.push(grades[i])
+        } else if (grades[i] >= 38 && ((roundUp - grades[i]) < 3)) {
+          finalGrades.push(roundUp);
+        }
+      } return finalGrades
+    }
+  </code></pre>
+  </div>
+
+  <div class="problem-box">
+    <h2>Apples & Oranges</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/apples_oranges.png" alt="Apples and Oranges">
+    <br>
+    <pre><code>
+      function countApplesAndOranges(s, t, a, b, apples, oranges) {
+        let appleCount = 0;
+        let orangeCount = 0;
+    
+        for (let i = 0; i < apples.length; i++) {
+            let fallenApple = apples[i] + a
+            if ((fallenApple >= s) && (fallenApple <= t)) {
+                appleCount++
+            }
+        } console.log(appleCount);
+    
+        for (let j = 0; j < oranges.length; j++) {
+            let fallenOrange = oranges[j] + b
+            if ((fallenOrange >= s) && (fallenOrange <= t)) {
+                orangeCount++
+            }
+    
+        } console.log(orangeCount);
+    }
+    </code></pre>
+  </div>
+
+  <div class="problem-box">
+    <h2>Number Line Jumps</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/kangaroohop.png" alt="Kangaroo Jumps">
+    <br>
+    <pre><code>
+        function kangaroo(x1, v1, x2, v2) {
+          for (let i = 0; i <= 10000; i++) {
+              x1 += v1
+              x2 += v2
+              if (x1 === x2) {
+                  return 'YES'
+              }
+          } return 'NO'
+      }
+      </code></pre>
+  </div>
+
+  <div class="problem-box">
+    <h2>Between Two Sets</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/between-two-sets.png" alt="between-two-sets">
+    <br>
+    <pre><code>
+      function getTotalX(a, b) {
+        let rangeArr = [];
+        let maxA = Math.max(...a);
+        let counter = 0
+    
+        for (let i = 1; i <= 100; i ++) {
+            let r = maxA * i;
+            rangeArr.push(r);
+            if (r === b[0]) {
+                { break }
+            } 
+        }
+    
+        for (let k = 0; k < rangeArr.length; k++) {
+            for (let j = 0; j < b.length; j++){
+                let remainder = b[j] % rangeArr[k]
+    
+                if (remainder !== 0) {
+                    rangeArr.splice(k, 1, 0)
+                    { break }
+                } 
+            } 
+            for (let g = 0; g < a.length; g++){
+                let remainder = rangeArr[k] % a[g];
+    
+                if (remainder !== 0) {
+                    rangeArr.splice(k, 1, 0)
+                    { break }
+                } 
+            }
+        } 
+    
+        for (let t= 0; t < rangeArr.length; t++) {
+                if (rangeArr[t] !== 0) {
+                    counter++;
+                }
+            } return counter;
+    }
+    </code></pre>
+    <br>
+    <h2>Alternate Answer</h2>
+    <pre><code>
+      function getTotalX(a, b) {
+        let count = 0;
+        let minA = Math.min(...a);
+        let maxB = Math.max(...b);
+        for (let i = minA; i <= maxB; i += minA) {
+            if (b.every((item) => item % i === 0)) {
+                if (a.every((item) => i % item === 0)) {
+                    count += 1;
+                }
+            }
+        }
+        return count;
+    }
+    
+      </code></pre>
+  </div>
+
+  <div class="problem-box">
+    <h2>Breaking Records</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/breaking-records.png" alt="breaking records">
+    <br>
+    <pre><code>
+      function breakingRecords(scores) {
+        let records = [scores[0], scores[0]];
+        let maxCount = 0;
+        let minCount = 0;
+        let countArr = [0, 0];
+    
+        //loop through scores array
+        for (let i = 0; i < scores.length; i++) {
+            //if score greater than score in record, replace value and add 1 to minCount
+            if (scores[i] > records[0]) {
+                records.splice(0, 1, scores[i]);
+                maxCount++;
+                //if score less than score in record, replace value and add 1 to minCount
+            } else if (scores[i] < records[1]) {
+                records.splice(1, 1, scores[i]);
+                minCount++;
+            }
+            //add maxCount and minCount to new array
+        } countArr.splice(0, 1, maxCount);
+        countArr.splice(1, 1, minCount);
+        return countArr
+    }
+      </code></pre>
+  </div>
+  
+
+  <div class="problem-box">
+    <h2>Subarray Division</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/subarray_division.png" alt="subarray division">
+    <br>
+    <pre><code>
+      function birthday(s, d, m) {
+        function reducer(previousValue, currentValue, index) {
+            const returns = previousValue + currentValue;
+            return returns;
+        }
+    
+        let count = 0;
+    
+        for (let i = 0; i < s.length; i++) {
+            let removed = s.slice(i, (i + m))
+            let sum = removed.reduce(reducer);
+            if (sum === d) {
+                count++
+            }
+        } return count;
+    }
+    </code></pre>
+  </div>
+
+  <div class="problem-box">
+    <h2>Diff Two Arrays</h2>
+   <p>Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. i.e. return the symmetric difference of the two arrays.</p>
+    <br>
+    <pre><code>
+      function diffArray(arr1, arr2) {
+        return arr1
+          .concat(arr2)
+          .filter(item => !arr1.includes(item) || !arr2.includes(item));
+      }
+    </code></pre>
+  </div>
+
+  <div class="problem-box">
+    <h2>Divisible Sum Pairs</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/divisible_sum_pairs.png" alt="divisible sum pairs">
+    <br>
+    <pre><code>
+      function divisibleSumPairs(n, k, ar) {
+        let count = 0;
+        for (let i = 0; i < ar.length; i++) {
+            for (let j = (i + 1); j < ar.length; j++) {
+                let sum = ar[i] + ar[j]
+                if (sum % k === 0) {
+                    count++
+                }
+            }
+        } return count
+    }
+    </code></pre>
+  </div>
+
+  <div class="problem-box">
+    <h2>Migratory Birds</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/migratory-birds.png" alt="divisible sum pairs">
+    <br>
+    <pre><code>
+      function migratoryBirds(arr) {
+        let count1 = 0;
+        let count2 = 0;
+        let count3 = 0;
+        let count4 = 0;
+        let count5 = 0;
+    
+        let repeats = [];
+    
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === 1) {
+                count1++;
+            } else if (arr[i] === 2) {
+                count2++;
+            } else if (arr[i] === 3) {
+                count3++;
+            } else if (arr[i] === 4) {
+                count4++;
+            } else if (arr[i] === 5) {
+                count5++;
+            }
+        }
+        repeats.push(count1, count2, count3, count4, count5)
+        return repeats.indexOf(Math.max(...repeats)) + 1
+    }
+    </code></pre>
+  </div>
+
+  <div class="problem-box">
+    <h2>Day of the Programmer</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/day_of_programmer.png" alt="day of the programmer">
+    <br>
+    <pre><code>
+      function dayOfProgrammer(year) {
+        if ((year > 1918) && ((year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0))) {
+            return ('12.09.' + year)
+        } else if ((year < 1918) && (year % 4 === 0)) {
+            return ('12.09.' + year)
+        } else if (year === 1918) {
+            return ('26.09.' + year)
+        } else {
+            return ('13.09.' + year)
+        }
+    }
+    </code></pre>
+  </div>
+
+
+  <div class="problem-box">
+    <h2>Bill Division</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/bill-division.png" alt="day of the programmer">
+    <br>
+    <pre><code>
+      function bonAppetit(bill, k, b) {
+        bill.splice(k, 1);
+        let bActualTotal = (bill.reduce((a, b) => a + b, 0)) / 2;
+        if (b - bActualTotal === 0) {
+            console.log('Bon Appetit')
+        } else {
+            console.log(b - bActualTotal)
+        }
+    }
+    </code></pre>
+  </div>
+
+  <div class="problem-box">
+    <h2>Sales By Match</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/sales-by-match.png" alt="sales by match">
+    <br>
+    <pre><code>
+      function sockMerchant(n, ar) {
+        let pairs = 0
+    
+        for (let i = 0; i < ar.length; i++) {
+            for (let j = i + 1; j < ar.length; j++) {
+                if (ar[i] === ar[j]) {
+                    pairs++;
+                    ar.splice(i, 1, "");
+                    ar.splice(j, 1);
+                }
+            }
+        } return pairs
+    }
+    </code></pre>
+  </div>
+
+    <div class="problem-box">
+    <h2>Drawing Book</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/drawing-book.png" alt="Drawing Book">
+    <br>
+    <pre><code>
+      function pageCount(n, p) {
+        let fromFront = Math.floor(p / 2);
+        let fromBack = 0;
+        if ((n % 2 === 0) && (p % 2 !== 0)) {
+            fromBack = Math.ceil((n - p) / 2);
+        } else {
+            fromBack = Math.floor((n - p) / 2);
+        }
+        let compare = [fromFront, fromBack];
+        return Math.min(...compare)
+    }
+    </code></pre>
+  </div>
+
+  <footer>
+    Created by <a class="custom-link" href="https://github.com/missatrox44">missatrox44</a>
+  </footer>
+
+</body>
+
+</html>
+
