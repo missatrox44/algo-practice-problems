@@ -402,6 +402,35 @@
     </code></pre>
   </div>
 
+  <div class="problem-box">
+    <h2>Counting Valleys</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/counting-valleys.png" alt="Counting Valleys">
+    <br>
+    <pre><code>
+      function countingValleys(steps, path) {
+        let seaLevel = 0;
+        let pathArr = path.split('')
+        let valleys = 0;
+    
+        for (let i = 0; i < pathArr.length; i++) {
+            if (pathArr[i] === 'D') {
+                seaLevel--
+                pathArr.splice(i, 1, seaLevel)
+            } else {
+                seaLevel++
+                pathArr.splice(i, 1, seaLevel)
+            }
+    
+            if (pathArr[i] === 0 && pathArr[i - 1] === -1) {
+                valleys++
+            }
+        }
+        return valleys
+    }
+    </code></pre>
+  </div>
+
   <footer>
     Created by <a class="custom-link" href="https://github.com/missatrox44">missatrox44</a>
   </footer>

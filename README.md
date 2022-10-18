@@ -18,7 +18,7 @@ Small library of algorithm problems with possible solutions. Users will have abi
 - [Questions](#Questions)
 
 ## Installation
-- [Name of Package](packagelink.com)
+- [Tailwind](packagelink.com)
 - [Name of Package](packagelink.com)
 - [Name of Package](packagelink.com)
 
