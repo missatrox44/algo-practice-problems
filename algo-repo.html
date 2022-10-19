@@ -431,6 +431,32 @@
     </code></pre>
   </div>
 
+
+  <div class="problem-box">
+    <h2>Electronics Shop</h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/electronics-shop.png" alt="Electronics shop">
+    <br>
+    <pre><code>
+      function getMoneySpent(keyboards, drives, b) {
+        let possibleCombos = [];
+        for (let i = 0; i < keyboards.length; i++) {
+            for (let j = 0; j < drives.length; j++) {
+                if ((keyboards[i] + drives[j]) <= b) {
+                    possibleCombos.push((keyboards[i] + drives[j]))
+                }
+            }
+        } if (!possibleCombos.length) {
+            return -1
+        } else {
+            possibleCombos.sort((a, b) => a - b)
+            return possibleCombos[possibleCombos.length - 1]
+        }
+    }
+    </code></pre>
+  </div>
+
+
   <footer>
     Created by <a class="custom-link" href="https://github.com/missatrox44">missatrox44</a>
   </footer>
