@@ -478,6 +478,33 @@
   </div>
 
 
+  <div class="problem-box">
+    <h2>Picking Numbers
+
+    </h2>
+    <h4>Easy</h4>
+    <img width="400px" height="387px" src="./images/picking-numbers.png" alt="picking numbers">
+    <p></p>
+    <br>
+    <pre><code>
+function pickingNumbers(a) {
+    a.sort();
+    a.push(1000);
+    let subArrays = [];
+
+    for (let i = 0; i < a.length; i++) {
+        for (let j = i + 1; j < a.length; j++) {
+            if (Math.abs(a[i] - a[j]) > 1) {
+                let sub = a.slice(i, j)
+                subArrays.push(sub);
+                { break };
+            }
+        }
+    } return Math.max(...subArrays.map(el => el.length));
+}
+    </code></pre>
+  </div>
+
   <footer>
     Created by <a class="custom-link" href="https://github.com/missatrox44">missatrox44</a>
   </footer>
