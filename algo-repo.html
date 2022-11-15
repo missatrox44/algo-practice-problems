@@ -227,7 +227,7 @@
     }
       </code></pre>
   </div>
-  
+
 
   <div class="problem-box">
     <h2>Subarray Division</h2>
@@ -256,7 +256,8 @@
 
   <div class="problem-box">
     <h2>Diff Two Arrays</h2>
-   <p>Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. i.e. return the symmetric difference of the two arrays.</p>
+    <p>Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both.
+      i.e. return the symmetric difference of the two arrays.</p>
     <br>
     <pre><code>
       function diffArray(arr1, arr2) {
@@ -382,7 +383,7 @@
     </code></pre>
   </div>
 
-    <div class="problem-box">
+  <div class="problem-box">
     <h2>Drawing Book</h2>
     <h4>Easy</h4>
     <img width="400px" height="387px" src="./images/drawing-book.png" alt="Drawing Book">
@@ -459,7 +460,10 @@
   <div class="problem-box">
     <h2>Cats and a Mouse</h2>
     <h4>Easy</h4>
-    <p>Two cats and a mouse are at various positions on a line. You will be given their starting positions. Your task is to determine which cat will reach the mouse first, assuming the mouse does not move and the cats travel at equal speed. If the cats arrive at the same time, the mouse will be allowed to move and it will escape while they fight.</p>
+    <p>Two cats and a mouse are at various positions on a line. You will be given their starting positions. Your task is
+      to determine which cat will reach the mouse first, assuming the mouse does not move and the cats travel at equal
+      speed. If the cats arrive at the same time, the mouse will be allowed to move and it will escape while they fight.
+    </p>
     <img width="400px" height="387px" src="./images/cats-and-a-mouse.png" alt="Cats and a mouse">
     <p></p>
     <br>
@@ -509,11 +513,16 @@ function pickingNumbers(a) {
     <h2>Beautiful Days at the Movies
     </h2>
     <h4>Easy</h4>
-    <p>Lily likes to play games with integers. She has created a new game where she determines the difference between a number and its reverse. For instance, given the number 12, its reverse is 21. Their difference is 9. The number 120 reversed is , 21 and their difference is 99.
-
-      She decides to apply her game to decision making. She will look at a numbered range of days and will only go to a movie on a beautiful day.
-      
-      Given a range of numbered days, [i...j] and a number k, determine the number of days in the range that are beautiful. Beautiful numbers are defined as numbers where |i-reverse(i)| is evenly divisible by k. If a day's value is a beautiful number, it is a beautiful day. Return the number of beautiful days in the range.</p>
+    <p>Lily likes to play games with integers. She has created a new game where she determines the difference between a
+      number and its reverse. For instance, given the number 12, its reverse is 21. Their difference is 9. The number
+      120 reversed is , 21 and their difference is 99.</p>
+    <p>
+      She decides to apply her game to decision making. She will look at a numbered range of days and will only go to a
+      movie on a beautiful day.</p>
+    <p>
+      Given a range of numbered days, [i...j] and a number k, determine the number of days in the range that are
+      beautiful. Beautiful numbers are defined as numbers where |i-reverse(i)| is evenly divisible by k. If a day's
+      value is a beautiful number, it is a beautiful day. Return the number of beautiful days in the range.</p>
     <br>
     <pre><code>
       function beautifulDays(i, j, k) {
@@ -529,6 +538,28 @@ function pickingNumbers(a) {
     </code></pre>
   </div>
 
+
+  <div class="problem-box">
+    <h2>Viral Advertising
+    </h2>
+    <h4>Easy</h4>
+    <p>HackerLand Enterprises is adopting a new viral advertising strategy. When they launch a new product, they advertise it to exactly 5 people on social media. On the first day, half of those 5 people (ie. floor(5/2) = 2) like the advertisement and each shares it with 3 of their friends. At the beginning of the second day, floor(5/2) x 3 = 2 x 3 = 6 people receive the advertisement. Each day, floor(recipients/2) of the recipients like the advertisement and will share it with 3 friends on the following day. Assuming nobody receives the advertisement twice, determine how many people have liked the ad by the end of a given day, beginning with launch day as day 1.</p>
+    <br>
+    <pre><code>
+      function viralAdvertising(n) {
+        let liked = 2;
+        let shared = 5;
+        let cumulative = 0;
+        
+        for (let i = 0; i < n; i++){
+            liked = Math.floor(shared/2);
+            shared = Math.floor(shared/2) *3;
+            cumulative += liked
+        } return cumulative; 
+    }
+    </code></pre>
+  </div>
+
   <footer>
     Created by <a class="custom-link" href="https://github.com/missatrox44">missatrox44</a>
   </footer>
@@ -536,4 +567,3 @@ function pickingNumbers(a) {
 </body>
 
 </html>
-
