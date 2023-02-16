@@ -8,8 +8,26 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css"  rel="stylesheet" />
 </head>
-<body>
- <p>Staircase problem here</p>
+<body class="text-center">
+  <h3 class="text-4xl my-6">Staircase</h3>
+  <!-- <p>Print a staircase of size <em>n</em> using <em>#</em> symbols and spaces.</p> -->
+  <div class="flex justify-center">
+    <img height="500" width="487" src="./images/staircase-screenshot.png" />
+  </div>
+  
+  <div class="text-left flex justify-center" >
+   <pre>
+     <code>
+      function staircase(n) { 
+        for (let i = 1; i <= n; i++) { 
+          console.log((' '.repeat(n - i)) + '#'.repeat(i))
+      } 
+    }
+     </code>
+   </pre>
+  </div>
+ 
+   </code>
   
  <button type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"><a href="index.html">GO BACK</a></button>
 
